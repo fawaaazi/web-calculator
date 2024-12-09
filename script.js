@@ -1,36 +1,57 @@
+let num1=null
+let num2=null
+let operator=null
+
 function calculate(val){
+    const display=document.getElementById("display")
     if(Number.isInteger(val) || val=='.'){
-         document.getElementById("display").value+=val;
+        display.value+=val
+        return
+
+    }
+
+    if(['+','-','*','/'].includes(val)){
+            if(display != null){
+                operator=val
+                num1=parseFloat(display.value)
+                display.value=""
+                return
+            }
+    }
+
+    if(val=="="){
+        let result
+        console.log(num1)
         
-    }
-    var num1=document.getElementById("display").value;
-    if(val=='+' || val=='-' || val=='*' || val=='/'){
-
-
-        document.getElementById("display").value=""
-        var operator=val;
-        var num1
-        num1=num
-        num=0
-    }
-    else if(val=='='){
-        console.log(num1);
-        console.log(num);
-
-        if(operator=='+'){
-            document.getElementById("display").value=num+num1;
-        }
-        else if(operator=='-'){
-            document.getElementById("display").value=num-num1;
-        }
-        else if(operator=='*'){
-            document.getElementById("display").value=num*num1;
-        }
-        else if(operator=='/'){
-            document.getElementById("display").value=num/num1;
-        }
+         num2=parseFloat(display.value)
+        switch(operator){
+             case '+':
+                 result=num1+num2
+                 display.value=result
+                 return
+             case '-':
+                result=num1-num2
+                display.value=result
+                return
+             case '*':
+                 result=num1*num2
+                 display.value=result
+                 return
+             case '/':
+                 result=num1/num2
+                 display.value=result
+                 return    
+          }
+          console.log(result)
+          num1=null
+          num2=null
+          operator=null      
     }
 
-    
-
+}
+function clearCalc(){
+    document.getElementById("display").value=""
+    num1=null
+    num2=null
+    operator=null
 }

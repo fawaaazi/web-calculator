@@ -13,8 +13,12 @@
 }    
 .button{
     width: 140px;
-    background-color: bisque;
+    background-color: darkgrey;
     height: 100px;
+    text-decoration: solid;
+    font-size: larger;
+    font-weight: bolder;
+    
 
 }
 .buttonDiv{
