@@ -1,0 +1,22 @@
+.Calculator{
+    width: 60%;
+    height: 641px;
+    background-color: black;
+    margin-left: 355px;
+}
+#display{
+    width: 97%;
+    margin: 2px;
+    height: 20%;
+    margin-left: 6px;
+    pointer-events: none;
+}    
+.button{
+    width: 140px;
+    background-color: bisque;
+    height: 100px;
+
+}
+.buttonDiv{
+    margin-left: 7px;
+}
